@@ -3,6 +3,373 @@
 	<head>
 		<meta charset=utf-8>
 		<title>Travel Webpage</title>
+		<style>
+	/* STYLE THE HEADER STYLE THE HEADER */
+			h1, h2, h3{
+				font-family:arial, sans-serif;
+				color:rgba(0,0,0,0.7);
+			}
+
+			#vienna-banner{
+				position:relative;
+			}
+
+			#vienna-heading{
+				font-size:100px;
+				position:absolute;
+				top:50px;
+				left:20vw;
+			}
+
+			#vienna-skyline{
+				object-fit:cover;
+				width:97vw;
+				height:75vh;
+			}
+
+	/* STYLE THE NAVBAR STYLE THE NAVBAR */
+			#nav-bar{
+				overflow:auto;
+				position:relative;
+				margin:auto;
+				margin-top:0px;
+				width:45vw;
+				background-color:rgba(0,0,0,0.7);
+				padding-left:12px;
+			}
+	/* STYLE THE NAVBAR LINKS STYLE THE NAVBAR LINKS */
+			.topnav{
+				font-size:25px;
+				color:white;
+				padding:2px;
+				line-height:2.0;
+				width:10vw;
+				text-align:center;
+				float:left;
+				margin-left:5px;
+				border-radius:2px;
+				background-color:rgba(0,0,0,0.7);
+			}
+			.topnav:hover{
+				background-color:salmon;
+				opacity:0.7;
+			}
+			.navlink:link{
+				color:white;
+				text-decoration:none; 
+			}
+			.navlink:hover{
+				color:white;
+				text-decoration:none;
+			}
+
+			.navlink:visited{
+				color:white;
+				text-decoration:none;
+			}
+
+	/* STYLE THE PHOTO ALBUM STYLE THE PHOTO ALBUM */
+			#album-div{
+				width:75%;
+				height: 95vh;
+				margin:auto;
+				background-color:rgba(0,0,0,0.7);
+				margin-top:110px;
+				border-radius:2px;
+				padding-top:15px;
+				padding-bottom:15px;
+				position:relative;
+			}
+
+			.gallery-caption:hover{
+				opacity:1;
+			}
+
+			.gallery-caption{
+				position:absolute;
+				height:365px;
+				width:50vw;
+				top:14px;
+				left:120px;
+				z-index:2;
+				opacity:0;
+			}
+			.caption-background{
+				margin-left:0px;
+				font-family:arial, sans-serif;
+				text-align:center;
+				background-color:rgba(0,0,0,0.7);
+				color:rgba(81,81,81,0.7);
+				position:absolute;
+				width:50vw;
+				top:310px;
+				padding-top:10px;
+				padding-bottom:10px;
+			}
+			.album-main{
+				width:50vw;
+				position:absolute;
+				left:120px;
+				margin-bottom:15px;
+				z-index:1;
+			}
+
+			.thumbnail-box{
+				position:absolute;
+				top:395px;
+				left:50px;
+				margin:auto;
+				width:700px;
+				background-color:rgba(155,155,155,0.5);
+				margin-bottom:5px;
+				border-radius:2px;
+			}
+
+			#arrow-left{
+				float:left;
+				font-size:2em;
+				color:rgba(0,0,0,0.7);
+			}
+
+			#arrow-right{
+				float:right;
+				font-size:2em;
+				color:rgba(0,0,0,0.7);
+			}
+			.thumbnail-pics{
+				height:100px; /* HEIGHT OF CONTAINER */
+				width:100px; /* WIDTH OF CONTAINER */
+				object-fit:contain;
+				margin-left:5px;
+				margin-right:5px;
+				position:relative;
+				left:15px;
+			}
+
+	/* STYLE THE TOP 3 STYLE THE TOP 3*/
+
+			#top-container{
+				margin-top:100px;
+			}
+
+			.top-h2{
+				font-size:3em;
+				text-align:center;
+				font-family:arial, sans-serif;
+				color:rgba(0,0,0,0.7);
+				background-image:url("https://www.greenpearls.com/wp-content/uploads/2018/08/green-capital-vienna-2400x1080.jpeg");
+				background-color:rgb(185,255,244);
+				height:25vh;
+				padding-top:60px;
+			}
+
+			.top-three{
+				width:30%;
+				height:450px;
+				padding:5px;
+				float:left;
+				margin-left:10px;
+				margin-bottom:40px;
+			}
+
+			#number-one{
+				position:relative;
+			}
+
+			#number-two{
+				position:relative;
+			}
+
+			#number-three{
+				position:relative;
+			}
+
+			.top-images{
+				object-fit:cover;
+				width:100%;
+				height:200px;
+			}
+
+			.top-h3{
+				position:absolute;
+				width:250px;
+				text-align:center;
+				top:75px;
+				left:30px;
+				font-size:3em;
+				color:rgba(255,255,255,0.9);
+				background-color:rgba(0,0,0,0.5);
+				padding:10px;
+			}
+
+			.top-h3:hover{
+				background-color:salmon;
+			}
+
+			.read-more:link{
+				color:black;
+			}
+
+			a.read-more:hover{
+				color:red;
+			}
+
+			.read-more:visited{
+				color:black;
+			}
+			.read-more{
+				position:absolute;
+				font-family:arial, sans-serif;
+				font-size:30px;
+				text-align:center;
+				left:80px;
+				bottom:20px;
+				text-decoration:none;
+			}
+
+			p.top-paragraphs{
+				font-family:arial, sans-serif;
+				font-size:20px;
+			}
+
+	/* STYLE THE BLOG STYLE THE BLOG*/
+			#blog-container{
+				position:relative;
+				clear:both;
+			}
+
+			.blog-post{
+				border-bottom:2px solid black;
+				margin:10px;
+				height:65vh;
+				overflow:hidden;
+				padding:10px;
+			}
+
+			.blog-pic{
+				object-fit: cover;
+				height:300px;
+				width:400px;
+			}
+
+			.pic-left{
+				position:absolute;
+				float:left;
+			}
+
+			.para-right{
+				float:right;
+				width:55%;
+				margin-right:5px;
+				padding:10px;
+			}
+
+			.pic-right{
+				position:absolute;
+				float:right;
+			}
+
+			.para-left{
+				float:left;
+				width:55%;
+				margin-left:5px;
+				margin-right:28px;
+				padding:5px;
+			}
+
+			.blog-headers{
+				color:white;
+				background-color:rgba(0,0,0,0.7);
+				height:15vh;
+				text-align:center;
+				font-size:3em;
+				padding-top:10px;
+			}
+
+			.blog-content{
+				font-family:arial, sans-serif;
+				font-size:20px;
+			}
+	/* STYLE THE FOOTER STYLE THE FOOTER */
+			#footer-container{
+				height:150px;
+				width:97vw;
+				position:relative;
+				background-image:url("https://www.greenpearls.com/wp-content/uploads/2018/08/green-capital-vienna-2400x1080.jpeg");
+				background-color:rgba(0,0,0,0.7);
+				border-radius:2px;
+				margin-top:75px;
+				clear:both;
+			}
+			/* LEFT SIDE OF FOOTER */
+			#footer-left{
+				position:absolute;
+				float:left;
+				height:150px;
+				width:40vw;
+			}
+			#footer-logo{
+				/* DIV SIZE/POSITION */
+				width:40vw;
+				position:absolute;
+				/*DIV STYLING */
+				border-radius:2px;
+				margin-top:5px;
+				/* FOOTER LOGO TEXT FORMATTING */
+				font-family: arial, sans-serif;
+				font-size:3.5em;
+				color:rgba(0,0,0,0.7);
+				padding-left:5px;
+				text-decoration:none;
+			}
+
+			#footer-info{
+				/* BOX SIZE/POSTION */
+				position:absolute;
+				width:40vw;
+				top:67px;
+				/* BOX STYLING */
+				/* FOOTER INFO TEXT FORMATTING */
+				padding-left:10px;
+			}
+			/* RIGHT SIDE OF FOOTER */
+			#footer-right{
+				/* FOOTER RIGHT SIZE/POSITION */
+				position:relative;
+				float:right;
+				top:75px;
+				height:75px;
+				width:26vw;
+			}
+			/* SOCIAL ICON FORMATTING */
+			
+			.icon-left{
+				height:5vw;
+				border-radius:2px;
+				position:relative;
+				float:left;
+				top:10px;
+				left:10px;
+			}
+
+			.icon-middle{
+				height:5vw;
+				border-radius:2px;
+				position:relative;
+				top:10px;
+				left:25px;
+				margin-right:10px;
+			}
+			.icon-right{
+				height:5vw;
+				border-radius:2px;
+				position:relative;
+				float:right;
+				top:10px;
+				right:10px;
+
+			}
+		</style>
 </head>
 	<body>
 		<!-- HEADER AND NAVBAR SECTION !-->
