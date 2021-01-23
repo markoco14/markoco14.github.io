@@ -1,648 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset=utf-8>
-		<title>Travel Webpage</title>
+		<meta charset="uft-8">
+		<title>Photo Gallery</title>
 		<style>
-	/* STYLE THE HEADER STYLE THE HEADER */
-			h1, h2, h3{
-				font-family:arial, sans-serif;
-				color:rgba(0,0,0,0.7);
-			}
-
-			#vienna-banner{
+			.album-container{
+				border: 2px solid;
+				border-color:rgba(81,81,81,0);
+				background-color:rgba(81,81,81,0.8);
 				position:relative;
-			}
-
-			#vienna-heading{
-				font-size:100px;
-				position:absolute;
-				top:50px;
-				left:20vw;
-			}
-
-			#vienna-skyline{
-				object-fit:cover;
-				width:97vw;
 				height:75vh;
+				width:60vw;
+				margin:auto;
 			}
 
-	/* STYLE THE NAVBAR STYLE THE NAVBAR */
-			#nav-bar{
-				overflow:auto;
-				position:relative;
-				margin:auto;
-				margin-top:0px;
-				width:45vw;
-				background-color:rgba(0,0,0,0.7);
-				padding-left:12px;
+			
+			.main-pic{
+				
+				position:absolute;
+				object-fit:cover;
+				height:50vh;
+				width:60%;
+				margin:20px 20%;
 			}
-	/* STYLE THE NAVBAR LINKS STYLE THE NAVBAR LINKS */
-			.topnav{
-				font-size:25px;
-				color:white;
-				padding:2px;
-				line-height:2.0;
-				width:10vw;
+
+			.main-caption{
+				opacity:0;
+				position:absolute;
+				height:50vh;
+				width:60%;
+				margin:20px 20%;
+			}
+
+			.caption{
+				position:absolute;
+				font-family:arial;
 				text-align:center;
-				float:left;
-				margin-left:5px;
-				border-radius:2px;
-				background-color:rgba(0,0,0,0.7);
-			}
-			.topnav:hover{
-				background-color:salmon;
-				opacity:0.7;
-			}
-			.navlink:link{
-				color:white;
-				text-decoration:none; 
-			}
-			.navlink:hover{
-				color:white;
-				text-decoration:none;
-			}
-
-			.navlink:visited{
-				color:white;
-				text-decoration:none;
-			}
-
-	/* STYLE THE PHOTO ALBUM STYLE THE PHOTO ALBUM */
-			#album-div{
-				width:75%;
-				height: 95vh;
-				margin:auto;
-				background-color:rgba(0,0,0,0.7);
-				margin-top:110px;
-				border-radius:2px;
-				padding-top:15px;
-				padding-bottom:15px;
-				position:relative;
-			}
-
-			.gallery-caption:hover{
+				color:rgb(81,81,81);
+				background-color:rgba(185,185,185,0.8);
+				top:215px;
+				padding-top:5px;
+				height:5vh;
+				width:100%;
+				
 				opacity:1;
 			}
 
-			.gallery-caption{
-				position:absolute;
-				height:365px;
-				width:50vw;
-				top:14px;
-				left:120px;
-				z-index:2;
-				opacity:0;
+			.main-caption:hover{
+				opacity:1;
 			}
-			.caption-background{
-				margin-left:0px;
-				font-family:arial, sans-serif;
+			
+			.sides:hover{
+				background-color:rgba(185,185,185,0.8);
+			}
+
+			.left-side{
+				background-color:rgba(150,150,150,0.8);
+				border-right:none;
+				position:absolute;
+				height:50vh;
+				width:10%;
+				margin:20px 10%;
 				text-align:center;
-				background-color:rgba(0,0,0,0.7);
-				color:rgba(81,81,81,0.7);
-				position:absolute;
-				width:50vw;
-				top:310px;
-				padding-top:10px;
-				padding-bottom:10px;
 			}
-			.album-main{
-				width:50vw;
+
+			.arrow-left{
+				position:relative;
+				font-family:arial;
+				font-size:2em;
+				color:rgba(255,255,255,0.5);
+				height:10%;
+				width:80%;
+				top:45%;
+				margin:auto;
+			}
+
+			.right-side{
+				background-color:rgba(150,150,150,0.8);
+				border-left:none;
 				position:absolute;
-				left:120px;
-				margin-bottom:15px;
-				z-index:1;
+				height:50vh;
+				width:10%;
+				margin:20px 80%;
+				text-align:center;
+			}
+
+			.arrow-right{
+				position:relative;
+				font-size:2em;
+				font-family:arial;
+				color:rgba(255,255,255,0.5);
+				height:10%;
+				width:80%;
+				top:45%;
+				margin:auto;
 			}
 
 			.thumbnail-box{
 				position:absolute;
-				top:395px;
-				left:50px;
-				margin:auto;
-				width:700px;
-				background-color:rgba(155,155,155,0.5);
-				margin-bottom:5px;
-				border-radius:2px;
+				background-color:rgba(150,150,150,0.8);
+				height:22%;
+				width:80%;
+				margin:0% 10% 0;
+				top:75%;
+				overflow: auto
 			}
 
-			#arrow-left{
-				float:left;
-				font-size:2em;
-				color:rgba(0,0,0,0.7);
-			}
-
-			#arrow-right{
-				float:right;
-				font-size:2em;
-				color:rgba(0,0,0,0.7);
-			}
 			.thumbnail-pics{
-				height:100px; /* HEIGHT OF CONTAINER */
-				width:100px; /* WIDTH OF CONTAINER */
-				object-fit:contain;
-				margin-left:5px;
-				margin-right:5px;
 				position:relative;
-				left:15px;
-			}
-
-	/* STYLE THE TOP 3 STYLE THE TOP 3*/
-
-			#top-container{
-				margin-top:100px;
-			}
-
-			.top-h2{
-				font-size:3em;
-				text-align:center;
-				font-family:arial, sans-serif;
-				color:rgba(0,0,0,0.7);
-				background-image:url("https://www.greenpearls.com/wp-content/uploads/2018/08/green-capital-vienna-2400x1080.jpeg");
-				background-color:rgb(185,255,244);
-				height:25vh;
-				padding-top:60px;
-			}
-
-			.top-three{
-				width:30%;
-				height:450px;
-				padding:5px;
-				float:left;
-				margin-left:10px;
-				margin-bottom:40px;
-			}
-
-			#number-one{
-				position:relative;
-			}
-
-			#number-two{
-				position:relative;
-			}
-
-			#number-three{
-				position:relative;
-			}
-
-			.top-images{
 				object-fit:cover;
-				width:100%;
-				height:200px;
+				height:50px;
+				margin:5px;
+				margin-top:15px;
+				display:inline-block;
+				opacity:0.5;
 			}
 
-			.top-h3{
-				position:absolute;
-				width:250px;
-				text-align:center;
-				top:75px;
-				left:30px;
-				font-size:3em;
-				color:rgba(255,255,255,0.9);
-				background-color:rgba(0,0,0,0.5);
-				padding:10px;
-			}
-
-			.top-h3:hover{
-				background-color:salmon;
-			}
-
-			.read-more:link{
-				color:black;
-			}
-
-			a.read-more:hover{
-				color:red;
-			}
-
-			.read-more:visited{
-				color:black;
-			}
-			.read-more{
-				position:absolute;
-				font-family:arial, sans-serif;
-				font-size:30px;
-				text-align:center;
-				left:80px;
-				bottom:20px;
-				text-decoration:none;
-			}
-
-			p.top-paragraphs{
-				font-family:arial, sans-serif;
-				font-size:20px;
-			}
-
-	/* STYLE THE BLOG STYLE THE BLOG*/
-			#blog-container{
-				position:relative;
-				clear:both;
-			}
-
-			.blog-post{
-				border-bottom:2px solid black;
-				margin:10px;
-				height:65vh;
-				overflow:hidden;
-				padding:10px;
-			}
-
-			.blog-pic{
-				object-fit: cover;
-				height:300px;
-				width:400px;
-			}
-
-			.pic-left{
-				position:absolute;
-				float:left;
-			}
-
-			.para-right{
-				float:right;
-				width:55%;
-				margin-right:5px;
-				padding:10px;
-			}
-
-			.pic-right{
-				position:absolute;
-				float:right;
-			}
-
-			.para-left{
-				float:left;
-				width:55%;
-				margin-left:5px;
-				margin-right:28px;
-				padding:5px;
-			}
-
-			.blog-headers{
-				color:white;
-				background-color:rgba(0,0,0,0.7);
-				height:15vh;
-				text-align:center;
-				font-size:3em;
-				padding-top:10px;
-			}
-
-			.blog-content{
-				font-family:arial, sans-serif;
-				font-size:20px;
-			}
-	/* STYLE THE FOOTER STYLE THE FOOTER */
-			#footer-container{
-				height:150px;
-				width:97vw;
-				position:relative;
-				background-image:url("https://www.greenpearls.com/wp-content/uploads/2018/08/green-capital-vienna-2400x1080.jpeg");
-				background-color:rgba(0,0,0,0.7);
-				border-radius:2px;
-				margin-top:75px;
-				clear:both;
-			}
-			/* LEFT SIDE OF FOOTER */
-			#footer-left{
-				position:absolute;
-				float:left;
-				height:150px;
-				width:40vw;
-			}
-			#footer-logo{
-				/* DIV SIZE/POSITION */
-				width:40vw;
-				position:absolute;
-				/*DIV STYLING */
-				border-radius:2px;
-				margin-top:5px;
-				/* FOOTER LOGO TEXT FORMATTING */
-				font-family: arial, sans-serif;
-				font-size:3.5em;
-				color:rgba(0,0,0,0.7);
-				padding-left:5px;
-				text-decoration:none;
-			}
-
-			#footer-info{
-				/* BOX SIZE/POSTION */
-				position:absolute;
-				width:40vw;
-				top:67px;
-				/* BOX STYLING */
-				/* FOOTER INFO TEXT FORMATTING */
-				padding-left:10px;
-			}
-			/* RIGHT SIDE OF FOOTER */
-			#footer-right{
-				/* FOOTER RIGHT SIZE/POSITION */
-				position:relative;
-				float:right;
-				top:75px;
-				height:75px;
-				width:26vw;
-			}
-			/* SOCIAL ICON FORMATTING */
-			
-			.icon-left{
-				height:5vw;
-				border-radius:2px;
-				position:relative;
-				float:left;
-				top:10px;
-				left:10px;
-			}
-
-			.icon-middle{
-				height:5vw;
-				border-radius:2px;
-				position:relative;
-				top:10px;
-				left:25px;
-				margin-right:10px;
-			}
-			.icon-right{
-				height:5vw;
-				border-radius:2px;
-				position:relative;
-				float:right;
-				top:10px;
-				right:10px;
+			.thumbnail-pics:hover{
+				opacity:1;
 
 			}
+
+			.thumbnail-box > div{
+				width: calc(100% / 6);
+			}
+
+			.left-thumbnail{
+				margin-left:50px;
+			}
+
 		</style>
-</head>
+	</head>
 	<body>
-		<!-- HEADER AND NAVBAR SECTION !-->
-		<div id="vienna-banner">
-			<h1 id="vienna-heading">Vie in Vienna</h1>
-			<img 
-				id="vienna-skyline"
-				src="https://www.greenpearls.com/wp-content/uploads/2018/08/green-capital-vienna-2400x1080.jpeg" 
-				alt="A view across gardened rooftops shows the sheer size of the Stephansdom."
-			>
-			<div id="nav-bar">
-				<a href="#vienna-banner" class="navlink">
-					<p class="topnav">
-						Home
-					</p>
-				</a>
-				<a href="#album-div" class="navlink">
-					<p class="topnav">
-						Photos
-					</p>
-				</a>
-				<a href="#top-container" class="navlink">
-					<p class="topnav">
-						Top 3
-					</p>
-				</a>
-				<a href="#blog-container" class="navlink">
-					<p class="topnav">
-						Blog
-					</p>
-				</a>
-			</div>
-		</div>
-
-		<!-- PHOTO ALBUM SECTION !-->
-		<div id="album-div">
-				<div class="gallery-caption"><div class="caption-background">Badeschiff floats on the Danube.</div></div>
-				<img 
-					class="album-main"
-					class="opacity"
-					src="https://www.wien.info/media/images/41001-badeschiff-donaukanal-sommer-outdoor-3to2.jpeg/image_gallery"
-					alt="A picture of Badeschiff floating peacefully on the Danube."
-				>
-		
-			<div class="thumbnail-box">
-				<p id="arrow-left">
-					<
-				</p>
-
-				<img 
-					src="https://www.wien.info/media/images/museumsquartier-wien-haupthof-teich-3to2.jpeg/image_gallery"
-					class="thumbnail-pics"
-					alt="People loafing about in the Museum's Quartier."
-				>
-				<img 
-					src="https://1000things.b-cdn.net/wp-content/uploads/	sonnenuntergang-copabeach.jpg"
-					class="thumbnail-pics"
-					alt="Sunset on the Donau Insel."
-				>
-				<img 
-					src="https://www.wien-ticket.at/tools/imager/imager.php?file=%2Fmedia%2Fimage%2Foriginal%2F17845.jpg&width=1500"
-					class="thumbnail-pics"
-					alt="A picture of the Stephansdom."
-				>
+		<div class="album-container">
+			<div>
 				<img
-					src="https://www.keepcalmandwander.com/wp-content/uploads/2019/06/Schonbrunn-Palace-Vienna-Austria-10.jpg"
-					class="thumbnail-pics"
-					alt="A picture across the Schonbrunn gardens to the palace."
+					class="main-pic"
+					src="https://lp-cms-production.imgix.net/2019-06/f15f7b57ab31c217f471c6712a2654e0-taipei-101.jpg?auto=compress&crop=center&fit=crop&format=auto&h=832&w=1920"
+					alt="a picture of the taipei 101"
 				>
-				<img 
-					src="https://www.wien.info/media/images/41052-naschmarkt-deli-wiener-maerkte-lokale-markt-essen-und-trinken-genuss-kulinarik-menschen-draussen-aussenansicht-abend-3to2.jpeg/image_gallery"
-					class="thumbnail-pics"
-					alt="A picture of the Naschmarkt stalls."
-				>
-				<p id="arrow-right">
-					>
-				</p>
-			</div>
-		</div>
-
-
-		<!-- START OF THE TOP 3 SECTION. !-->
-		<div id="top-container">
-			<h2 class="top-h2">Vienna's Top 3</h2>
-			<div id="number-one" class="top-three">
-				<img
-					class="top-images"
-					src="https://www.wien.info/media/images/cobenzl-wiener-weinwanderweg-weinwandertag-weingarten-weinberge-reben.jpg/image_gallery"
-					alt="A picture of a vineyard on the outskirts of Vienna."
-				>
-				<a href="#third-post">
-				<div class="top-h3">Kahlenberg</div>
-				</a>
-				<p class="top-paragraphs">Just on the outskirts of town, Kahlenberg is home to Vienna's vineyards, rolling hills, local wildlife, and happy afternoons. Enjoy a day of wine and hiking as you explore Austria, aux naturale. 
-				</p>
-				<a href="#third-post" class="read-more">Read more</a>
-			</div>
-
-			<div id="number-two" class="top-three">
-				<img
-					class="top-images"
-					src="https://media.diepresse.com/images/uploads/9/e/3/5847523/Donauinsel-Wien---Sandbank-an-der-Donau_1596535141248942_v0_h.jpg"
-					alt="A picture of three people on one of Donauinsel's many beaches."
-				>
-				<a href="#fourth-post">
-				<div class="top-h3">Donauinsel</div>
-				</a>
-				
-				<p class="top-paragraphs">The Donauinsel is like an island vacation but you don't even need a flight. Roll over by metro or bike for a day of sunshine, swimming, and water sports along miles of quiet, pristine riverbank.
-				</p>
-
-				<a href="#fourth-post" class="read-more">Read more</a>
-			</div>
-			
-			<div id="number-three" class="top-three">
-				<img
-					class="top-images"
-					src="https://imgl.krone.at/scaled/2149926/vc83305/full.jpg"
-					alt="A picture of sunset on the Donau Kanal across hundreds of beach-goers."
-				>
-				<a href="#fifth-post">
-				<div class="top-h3">Strandbar</div>
-				</a>
-				
-				<p class="top-paragraphs">For those looking to lounge about, Strandbar Hermann is the best spot in Vienna. For anyone who wants to get away from the hustle, Strandbar Hermann will give you a spot in the sand and a drink in your hand.</p>
-
-				<a href="#fifth-post" class="read-more">Read more</a>
-				
-			</div>
-		</div>
-
-		<!-- START OF THE BLOG SECTION !-->
-		<!-- 
-			-----COPY PASTE TO MAKE BLOG POSTS RIGHT OR LEFT-----
-			------TEXT TO THE RIGHT-----------
-			<div id="xth-post" class="blog-post">
-				<img
-					src=""
-				>
-				<div class="para-right">
-					<div class="blog-headers"></div>
-					<p class="blog-content"></p>
-				</div>
-			</div>
-			------TEXT TO THE LEFT------------
-			<div id="yth-post" class="blog-post">
-				<img
-					src=""
-				>
-				<div class="para-left">
-					<div class="blog-headers"></div>
-					<p class="blog-content"></p>
-				</div>
-			</div>
-			-------------------------------------------
-			!-->
-		<div id="blog-container">
-			<h2 class="top-h2">Blog</h2>
-			<!-- THIS IS THE FIRST BLOG POST. IT IS ABOUT PRATER. !-->
-			<div id="first-post" class="blog-post">
-				<img
-					class="blog-pic"
-					class="pic-left"
-					src="https://images.freeimages.com/images/large-previews/35d/vienna-prater-1415390.jpg"
-				>
-				<div class="para-right">
-					<div 
-						class="blog-headers">Vienna Praterdome
+				<div class="main-caption">
+					<div class="caption">
+						Sunset at the Taipei 101.
 					</div>
-					<p class="blog-content"> I need to write content for the Vienna Praterdome paragraph. It needs to be really long -- enough to fill 450px with text just about Prater. That sounds a little hard. I'm not sure I want to write that much content about Prater. First, I didn't spend much time there. Second, the best times I spent there were for Oktboberfest. Third, Prater is kind of boring.</p>
+				</div>
+				<!-- THIS IS THE LEFT ARROW !-->
+				<div class="left-side sides">
+					<div class="arrow-left"><</div>
+				</div>
+				<!-- THIS IS THE RIGHT ARROW !-->
+				<div class="right-side sides">
+					<div class="arrow-right">></div>
 				</div>
 			</div>
-			<!-- THIS IS THE SECOND BLOG POST. IT IS ABOUT THE BERMUDA DREIECK. !-->
-			<div id="second-post" class="blog-post">
+			<div class="thumbnail-box">
 				<img
-					class="blog-pic"
-					class="pic-right"
-					src="http://www.nightlife-cityguide.com/wp-content/uploads/2019/01/Vita-notturna-Vienna-Triangolo-delle-Bermuda.jpg"
+					class="thumbnail-pics left-thumbnail"
+					src="https://waterfordwhispersnews.com/wp-content/uploads/2019/04/shutterstock_1291603135.jpg"
+					alt="a picture of the dublin spire"
 				>
-				<div class="para-left">
-					<div class="blog-headers">Bermuda Dreieck</div>
-					<p class="blog-content">Never lost and never found in the Bermuda Dreieck. The Bermuda Dreieck is a small area in Vienna's city center which makes up a popular party district. The streets are lined with shops, restaurants, bars, and small dance clubs. By day, it is packed with tourists looking to buy Viennese things. By night, it is packed with tourists looking to drink and forget they wasted their day looking to buy Viennese things. The nightlife is not the best, but it's worth a visit if you want variety close at hand and don't want to pay entry.</p>
-				</div>
+				<img
+					class="thumbnail-pics"
+					src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/75/aa/e8.jpg"
+					alt="a picture of the burj khalifa"
+				>
+				<img
+					class="thumbnail-pics"
+					src="https://i2.wp.com/thetowerinfo.com/wp-content/uploads/2018/03/shenzhen-ping-an-finance-center-night.jpg?w=740&ssl=1"
+					alt="a picture of the Ping An Finance Center"
+				>
+				<img
+					class="thumbnail-pics"
+					src="https://www.koreattrack.com/images/Lotte-World-Lotte-World-Mall.jpg"
+					alt="a picture of the lotte world tower"
+				>
+				<img
+					class="thumbnail-pics"
+					src="https://i.guim.co.uk/img/media/27a6fbcbe6d7d4477cbdb06b12c3d43967624751/0_128_2998_2122/master/2998.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=4a7767d848ca6684ab17dc5b6998f1e4"
+					alt="a picture of the shanghai tower"
+				>
 			</div>
-			<!-- THIS IS THE THIRD BLOG POST. IT IS ABOUT KAHLENBERG. !-->
-			<div id="third-post" class="blog-post">
-				<img
-					class="blog-pic"
-					class="pic-left"
-					src="https://www.wien.info/media/images/cobenzl-wiener-weinwanderweg-weinwandertag-weingarten-weinberge-reben.jpg/image_gallery"
-					alt="A pictue of vineyards."
-				>
-				<div class="para-right">
-					<div class="blog-headers">Kahlenberg</div>
-					<p class="blog-content"> Just on the outskirts of town, Kahlenberg is home to Vienna's vineyards, rolling hills, local wildlife, and happy afternoons. Enjoy a day of wine and hiking as you explore Austria, aux naturale. Spot insects and friendly critters as you work through the trails, all while taking in the view of Vienna and beyond.  Stop at a vineyard -- or as many as you like -- and drink the season's local wines. Eat traditional Austrian snacks and linger as long you like; bring a headlamp and you can always find your way home.</p>
-				</div>
-			</div>
-			<div id="fourth-post" class="blog-post"><!-- FOURTH POST DIV (TEXT LEFT) !-->
-				<img
-					class="blog-pic"
-					class="pic-right"
-					src="https://media.diepresse.com/images/uploads/9/e/3/5847523/Donauinsel-Wien---Sandbank-an-der-Donau_1596535141248942_v0_h.jpg"
-				>
-				<div class="para-left">
-					<div class="blog-headers">Donauinsel</div>
-					<p class="blog-content">
-						The Donauinsel is the place for real Viennese to go when the weather is too hot or they are sick of their jobs. The island spans 21km of beatiful beaches and its lined with cyclin paths, sports facilities, and bathrooms for those of who just got to go. Cruise the area on a bicycle and don't commit yourself to the first swimming hole you see. The island is full of surprises so explore as long as you can, the best is just around the corner.
-					</p>
-				</div>
-			</div> <!-- END OF 4TH POST !-->
-			<div id="fifth-post" class="blog-post">
-				<img
-					class="blog-pic"
-					class="pic-left"
-					src="https://imgl.krone.at/scaled/2149926/vc83305/full.jpg"
-				>
-				<div class="para-right">
-					<div class="blog-headers">Strandbar</div>
-					<p class="blog-content">Strandbar Hermann may be my favourite place in Vienna. Its only open a few months out of the year, and that seasonality is part of its allure. When you spend enough time in a landlocked city, you begin to crave certain things. Mostly, sand on your feet and booze in your hand. You might not be able to swim in the water at Stranbar, but you can sure float away the day in the beer.</p>
-				</div>
-			</div> <!-- END OF 5TH POST !-->
 		</div>
-		<!-- END OF BLOG CONTAINER !-->
-		<!-- END OF BLOG CONTAINER !-->
-		<!-- START OF FOOTER CONTAINER !-->
-		<!-- START OF FOOTER CONTAINER !-->
-		<div id="footer-container">
-			<!-- LEFT SIDE OF FOOTER CONTAINER !-->
-			<div id="footer-left">
-				<div >
-					<a 
-					href="" 
-					id="footer-logo">
-					Vie in Vienna
-					</a>
-				</div>
-				<div id="footer-info">
-					<p>All rights reserved Vie in Vienna LLC
-						<br>Copyright 2021
-						<br>Located in Taiwan
-					</p>
-				</div>
-			</div> <!-- END OF LEFT SIDE DIV !-->
-			<!-- RIGHT SIDE OF FOOTER CONTAINER !-->
-			<div id="footer-right">
-				<div id="footer-social">
-					<a href="">
-						<img 
-							class="icon-left"
-							src="https://www.flaticon.com/svg/vstatic/svg/124/124010.svg?token=exp=1610865018~hmac=1f43dcacc6ae9951c027c0a2455d1c3e"
-							alt="Facebook logo icon."
-						>
-					<a href="">
-						<img 
-						class="icon-middle"
-						src="https://www.flaticon.com/svg/vstatic/svg/2111/2111463.svg?token=exp=1610865602~hmac=b0475628d6aa78e7504ffe42220e3a36"
-						alt="Instagram logo icon."
-						>
-					</a>
-					<a href="">
-						<img 
-						class="icon-middle"
-						src="https://www.flaticon.com/svg/vstatic/svg/124/124021.svg?token=exp=1610875694~hmac=3fe47de0e207bf7fb85a2640dbe42025"
-						>
-					</a>
-					<a href="">
-						<img 
-						class="icon-right"
-						src="https://as2.ftcdn.net/jpg/01/92/33/47/500_F_192334725_SQdV8bOon7t1T2XeMiCQAhdAbBlCz40H.jpg"
-						>
-					</a>
-				</div> <!-- END OF SOCIAL ICON DIV !-->	
-			</div> <!-- END OF RIGHT SIDE CONTAINER DIV !-->
-		</div> <!-- END OF FOOTER CONTAINER DIV !-->
 	</body>
 </html>
