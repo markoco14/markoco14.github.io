@@ -4,16 +4,67 @@
 		<meta charset="utf-8">
 		<title> The Whiteboard Art Store </title>
 		<style>
-			.cloudy-pic{
-				width:50%;
+			.header{
+				background-color:white;
+				text-align:center;
+				font-family:Arial, sans serif;
+				margin:-8px;
+				height:50vh;
+				width:97.5vw;
+				margin:auto;
 			}
+
+			.vertical-nav{
+				width:100px;
+				float:left;
+			}
+
+			.vertical-nav a{
+				background-color:white;
+				display: block;
+				padding:12px;
+				margin-left:-5px;
+				text-decoration:none;
+			}
+
+			.vertical-nav a:hover{
+				background-color:rgb(209,209,209);
+			}
+
+			.vertical-nav a.home{
+				background-color:black;
+				color:white;
+			}
+
+			.footer{
+				clear:both;
+				background-color:grey;
+				height:20vh;
+			}
+
+
 		</style> 
 	</head>
 	<body>
-		<div>Hello world.</div>
-		<img 
-			class="cloudy-pic"
-			src="https://lh3.googleusercontent.com/-cUf8CSeTmWN4Q8RZeLxEKwPOyggQepvbeeo7LG1VTqvBV_Ir82MZpxagnmkkAhwHxNe6smVLg91hvAX7dwneaRfARZ9HCl2d00eYiGzCqAZ9EfluRPK--3NS9XwlSP81TueP7rfk_HsVWC46Iek-u8eDrhO1i2l46udriyoGSmFzWsMpyz73dZ-dDrHAeehCybiklvFN6sUG0q7CtH2f_KIICTvkNMF31dRqo6PPsnDfqRPEwIMxiJ185ScOZkogINqDXyjR6hXbczI_GzN96l4s710IHcytuuCV8q1Ja6Ah2aYnUzaKhQHYqwx6L5kVHp7bMqp3QJock2N5iOnAAYdOl7RpP9B853V-Ao1TfWE5FzuBJlLDAOC9GcMzUXyweUfbu2Aj0M-5ZCRfhbl6GmiJTSFxtaVRZAqYzhcplcxj11C6LCf5YQywLtIVvNz4bT198yA1K9YBej4GJD_omdnlhC7aWSNLudsH7HF1TObgHf-NJ3dUqeD-VZWULPIKOQ3HnHeH0PIwDNPKnW4YX9N2kssA417APqdJwqfW_IjU7R22FzhFApj8TFTCCrR6e1oTk7vJlwTXytYhFXegGVakOejgM64ubX9rqLZfC2VrWMYfTB9dGGLpkF0a82F5wVlclKlFZBr2NqjepG3CZ4dyYGbWFcHEH77xpFE6oULklY2aYbZ1Ij_y9ya=w1183-h889-no?authuser=0"
-		>
+		<div class="header"> 
+			The Whiteboard Art Store
+		</div>
+
+		<div class="vertical-nav">
+			<a href="index.html" class="home">Home</a>
+			<a href="about.html">About</a>
+			<a href="#">Store</a>
+			<a href="#">Draw</a>
+			<a href="#">Contact</a>
+		</div>
+
+		<div class="footer">
+			The website Store<br>
+			Copyright The Website Store 2021<br>
+			Social Icons will go on the right side.
+		</div>
+
+		
+
 	</body>
 </html>
