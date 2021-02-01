@@ -5,7 +5,36 @@
 		<link rel="stylesheet" type="text/css" href="styleSheet.css">
 		<title> The Whiteboard Art Store </title>
 		<style>
-			
+			.home-store{
+				border:2px solid black;
+				float:left;
+				width:70%;
+				position:relative;
+			}
+			.store-item{
+				border:2px solid black;
+				display:inline-block;
+				margin:5px 5px 5px 5px;
+				padding:2px 2px 2px 2px;
+				text-align: center;
+			}
+
+			.thumbnail-pics{
+				height:150px;
+			}
+
+			.items{
+				height:50px;
+				line-height:50px;
+				font-size:2em;
+				font-family:arial, sans-serif;
+				padding:2px;
+			}
+
+			.item-title:hover{
+				background-color:rgb(155, 155, 155);
+			}
+
 		</style> 
 	</head>
 	<body>
@@ -21,8 +50,50 @@
 			<a href="contact.html">Contact</a>
 		</div>
 
+		<div class="home-store">
+			<div class="store-item">
+				<img
+					class="thumbnail-pics"
+					src="house-img.jpg"
+					alt="a picture of a man sitting in front of his house"
+				>
+				<div class="item-title items">Lonely House</div>
+				<div class="item-price items">$500</div>
+			</div>
+
+			<div class="store-item">
+				<img
+					class="thumbnail-pics"
+					src="fire-img.jpg"
+					alt="a picture of a fire truck"
+				>
+				<div class="item-title items">Fire Truck</div>
+				<div class="item-price items">$500</div>
+			</div>
+
+			<div class="store-item">
+				<img
+					class="thumbnail-pics"
+					src="police-img.jpg"
+					alt="a picture of a police car"
+				>
+				<div class="item-title items">Police Car</div>
+				<div class="item-price items">$500</div>
+			</div>
+
+			<div class="store-item">
+				<img
+					class="thumbnail-pics"
+					src="ambulance-img.jpg"
+					alt="a picture of an ambulance"
+				>
+				<div class="item-title items">Ambulance</div>
+				<div class="item-price items">$500</div>
+			</div>
+		</div>
+
 		<div class="footer">
-			The website Store<br>
+			The Whiteboard Store<br>
 			Copyright The Website Store 2021<br>
 			Social Icons will go on the right side.
 		</div>
