@@ -3,9 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="styleSheet.css">
-		<title> The Whiteboard Art Store </title>
+		<title> Whiteboard Lessons Online </title>
 		<style>
+
 			.home-store{
+				background-color: white;
 				border:2px solid black;
 				float:left;
 				width:70%;
@@ -39,16 +41,21 @@
 	</head>
 	<body>
 		<div class="header"> 
-			The Whiteboard Art Store
+			<img
+				class="logo"
+				src="logo-img.png"
+				alt="Whiteboard online logo"
+			>
+			
 		</div>
 
-		<div class="vertical-nav">
-			<a href="index.html" class="current-page">Home</a>
-			<a href="about.html">About</a>
-			<a href="#">Store</a>
-			<a href="#">Draw</a>
-			<a href="contact.html">Contact</a>
-		</div>
+		<!-- THIS IS THE NAVBAR SECTION. NO CONTAINER DIV !-->
+		<a href="index.html"><div class="navlink current-page">HOME</div></a>
+		<a href="about.html"><div class="navlink">ABOUT</div></a>
+		<a href="#"><div class="navlink">STORE</div></a>
+		<a href="#"><div class="navlink">DRAW</div></a>
+		<a href="contact.html"><div class="navlink">CONTACT</div></a>
+		
 
 		<div class="home-store">
 			<div class="store-item">
@@ -93,7 +100,7 @@
 		</div>
 
 		<div class="footer">
-			The Whiteboard Store<br>
+			Whiteboard Lessons Online<br>
 			Copyright The Website Store 2021<br>
 			Social Icons will go on the right side.
 		</div>
