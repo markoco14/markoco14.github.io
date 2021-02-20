@@ -37,6 +37,14 @@
 				background-color:rgb(155, 155, 155);
 			}
 
+			#canvas-holder {
+				position:relative;
+				width:800px;
+				height:400px;
+				border: 2px solid black;
+				margin: auto;
+			}
+
 		</style> 
 	</head>
 	<body>
@@ -56,11 +64,18 @@
 		<a href="draw.html"><div class="navlink">DRAW</div></a>
 		<a href="contact.html"><div class="navlink">CONTACT</div></a>
 		
+		<button id="button" class="button"> I want the buttons outside the canvas. </button>
+
+		<div id="canvas-holder"></div>
+
+		<div class="footer">
+			Whiteboard Lessons Online<br>
+			Copyright The Website Store 2021<br>
+			Social Icons will go on the right side.
+		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
 		<script>
-			// format the display buttons
-
 			function displayButton(col, x, y) {
 				fill(col);
 				ellipseMode(CENTER);
@@ -72,7 +87,8 @@
 			// set up our canvas on the page
 
 			function setup() {
-				createCanvas(800, 400);
+				let canvas = createCanvas(800, 400);
+				canvas.parent('canvas-holder');
 				background(255, 255, 255);
 			}
 			// define our variables
@@ -96,17 +112,7 @@
 
 				}
 			}
-
-			
 		</script>
-
-		<div class="footer">
-			Whiteboard Lessons Online<br>
-			Copyright The Website Store 2021<br>
-			Social Icons will go on the right side.
-		</div>
-
-		
 
 	</body>
 </html>
